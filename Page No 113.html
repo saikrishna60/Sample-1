@@ -1,0 +1,79 @@
+<html>
+
+<head>
+
+<title> Data Mining : page no 113 </title>
+
+<style type="text/css">
+p{
+  text-indent:30px;
+  text-align:justify;
+}
+
+body{
+   margin-left:450px;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+                                                    
+
+<p>the predicted class labels for the test examples. The agent collects ∆E from each example it<br/>
+correctly classifies, and is taxed once with Ecost. The net energy intake of an agent is determined<br/>
+by its classification accuracy. But the energy also depends on the state of the environment.<br/>
+We have an energy source for each ensemble, divided into bins corresponding to each data<br/>
+point. For ensemble g and record index <i>r</i> in the test data, the environment keeps track of energy<br/>
+E<sub><i>envt</i></sub><sup><i>g,r</i></sup> and the number of agents in ensemble <i>g</i>, count<sub><i>g,r</i></sub> that correctly predict record <i>r</i>. The<br/>
+energy received by an agent for each correctly classified record<i> r</i> is given by</P>
+
+∆E =E<sub>event</sub><sup> <i> g,r</i></sup> / min(5, prevCount<sub>g,r</sub>).                                               (10)
+
+<p>An agent receives greater reward for correctly predicting an example that most in its<br/>
+ensemble get wrong. The<i> min </i>function ensures that for a given point there is enough energy<br/>
+to reward at least five agents in the new generation. Candidate solutions receive energy only<br/>
+inasmuch as the environment has sufficient resources; if these are depleted, no benefits are<br/>
+available until the environmental resources are replenished. Thus, an agent is rewarded with<br/>
+energy for its high fitness values, but also has an interest in finding unpopulated niches,<br/>
+where more energy is available. The result is a natural bias toward diverse solutions in the<br/>
+population. E<sub>cost</sub> for any action is a constant (E<sub>cost</sub> < θ).</p>
+
+<p>In the selection part of the algorithm, an agent compares its current energy level with<br/>
+a constant reproduction threshold θ. If its energy is higher than θ, the agent reproduces; the<br/>
+agent and its mutated clone become part of the new population, with the offspring receiving<br/>
+half of its parent’s energy. If the energy level of an agent is positive but lower than θ, only<br/>
+that agent joins the new population.</p>
+
+<p>The environment for each ensemble is replenished with energy based on its<br/>
+predictive accuracy, as determined by majority voting with equal weight among base<br/>
+classifiers. We sort the ensembles in ascending order of estimated accuracy and<br/>
+apportion energy in linear proportion to that accuracy, so that the most accurate<br/>
+ensemble is replenished with the greatest amount of energy per base classifier. Since the<br/>
+total amount of energy replenished also depends on the number of agents in each<br/>
+ensemble, it is possible that an ensemble with lower accuracy can be replenished with<br/>
+more energy in total than an ensemble with higher accuracy</p>
+
+<p><h1>Experimental Results</h1><p>
+
+<i>Experimental results of MEE/ANN</i>
+
+<p>We tested the performance of MEE combined with neural networks on several data<br/>
+sets that were used in Opitz(1999). In our experiments, the weights and biases of the<br/>
+neural networks are initialized randomly between 0.5 and -0.5, and the number of hidden<br/>
+nodes is determined heuristically as the square root of <i>inputs</i>. The other parameters for<br/>
+the neural networks include a learning rate of 0.1 and a momentum rate of 0.9. The number<br/>
+of training epochs was kept small for computational reasons. The values for the various<br/>
+parameters are: Pr<i>(mutation)</i> = 1.0, Pr<i>(crossover)</i> = 0.8, E<sub>cost</sub> = 0.2,<i> q </i>= 0.3, and <i>T</i> = 30. The<br/>
+value of E<sub>envt</sub><sup>tot</sup> = 30 is chosen to maintain a population size around 100 classifier agents.</p>
+<p>Experimental results are shown in Table 4. All computational results for MEE are <br/> 
+based on the performance of the best ensemble and are averaged over five standard 10. </P>
+
+
+</body>
+
+</html>

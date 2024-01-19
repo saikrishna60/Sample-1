@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+<title> Data Mining : page no 115 </title>
+
+<style type="text/css">
+p{
+  text-indent:30px;
+  text-align:justify;
+}
+
+body{
+   margin-left:450px;
+}
+
+</style>
+
+</head>
+
+<body>
+                                                                  
+<p><i><h4> Guidelines toward optimized ensemble construction </h4></i></p> 
+<p>     In this section, we use MEE to examine ensemble characteristics and provide some<br/>
+guidelines for building optimal ensembles. We expect that by optimizing the ensemble<br/>
+construction process, MEE will in general achieve comparable accuracy to other methods<br/>
+using fewer individuals. We use data collected from the first fold of the first cross<br/>
+validation routine for the following analyses</P>
+<p>     We first investigate whether the ensemble size is positively related with the predictive<br/>
+accuracy. It has been well established that, to a certain degree, the predictive accuracy of an<br/>
+ensemble improves as the number of classifiers in the ensemble increases. For example, our<br/>
+result in Figure 12 indicates that accuracy improvements flatten out at an ensemble size of<br/>
+approximately 15-25. We also investigate whether the diversity among classifiers is<br/>
+positively related with the ensemble’s classification performance. In our experiments, we<br/>
+measured the diversity based on the difference of predicted class between each classifier and<br/>
+the ensemble. We first define a new operator ⊕ as follows: α ⊕ β = 0 if α = β, 1 otherwise.<br/>
+When an ensemble e consists of g classifiers, the diversity of ensemble e, diversitye<br/>
+, is defined as follows:</p>
+   <img src = "Screenshot 2024-01-18 143255.png" width = "200" height = "100"/>
+<p>    where <i>N</i> is the number of records in the test data and <i>pred<sub>j</sub><sup>i</sup></i><br/>
+ and <i>pred<sub>j</sub><sup>e</sup></i> represent the<br/>
+predicted class label for record <i>j</i> by classifier <i>i</i> and ensemble <i>e</i> respectively. The larger<br/>
+the value of diversity<sup>e</sup><br/>
+, the more diverse the ensemble is</p>
+<p>    We show the relationship between the predictive accuracy and ensemble diversity<br/>
+in Figure 12. This shows the expected positive relationship between accuracy and<br/>
+diversity. However, our results show that too much diversity among classifiers can<br/>
+deteriorate ensemble performance, as the final decision made by ensemble becomes a<br/>
+random guess</p>
+<p><i>    Figure 12: The relationship between the predictive accuracy and ensemble size (left),<br/>
+and between the predictive accuracy and ensemble diversity (right) with 95% confidence<br/>
+interval on the Soybean data. We observed similar patterns on other data sets</i></p>
+<img src = "Screenshot 2024-01-18 143420.png" width = "700" height = "300"/>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+
+<title> Data Mining : page no 111 </title>
+
+<style type="text/css">
+p{
+  text-indent:30px;
+  text-align:justify;
+}
+
+body{
+   margin-left:450px;
+}
+
+</style>
+
+</head>
+
+<body>
+                                                
+                                                        
+<p>   ensemble methods were paired with each of three different feature selection algorithms:<br/>
+complete, random, and genetic search. Using two table-based classification methods,<br/>
+ensembles constructed using features selected by the GA showed the best performance.<br/>
+In Cunningham and Carney (2000), a new entropy measure of the outputs of the<br/>
+component classifiers was used to explicitly measure the ensemble diversity and to<br/>
+produce good feature subsets for ensemble using hill-climbing search.</p>
+<p>  Genetic Ensemble Feature Selection (GEFS) (Opitz, 1999) used a GA to search for<br/>
+possible feature subsets. GEFS starts with an initial population of classifiers built using up<br>
+to <i>2D</i> features, where <i>D</i> is the complete feature dimension. It is possible for some features to<br/>
+be selected more than once in GEFS, and crossover and mutation operators are used to search<br/>
+for new feature subsets. Using 100 most-fit members with majority voting scheme, GEFS<br/>
+reported better estimated generalization than Bagging and AdaBoost on about two-thirds<br/>
+of 21 data sets tested. Longer chromosomes, however, make GEFS computationally<br/>
+expensive in terms of memory usage (Guerra-Salcedo & Whitley, 1999). Further, GEFS<br/>
+evaluates each classifier after combining two objectives in a subjective manner using <i>fitness<br/>
+= accuracy + λ diversity,</i> where<i> diversity</i> is the average difference between the prediction<br/>
+of component classifiers and the ensemble.</P>
+<p>However, all these methods consider only one ensemble. We propose a new<br/>
+algorithm for ensemble feature selection, Meta-Evolutionary Ensembles (MEE), that<br/>
+considers multiple ensembles simultaneously and allows each component classifier to<br/>
+move into the best-fit ensemble. We evaluate and reward each classifier based on two<br/>
+different criteria, accuracy and diversity. A classifier that correctly predicts data<br/>
+examples that other classifiers in the same ensemble misclassify contributes more to the<br/>
+accuracy of the ensemble to which it belongs. We imagine that some limited “energy”<br/>
+is evenly distributed among the examples in the data set. Each classifier is rewarded with<br/>
+some portion of the energy if it correctly predicts an example. The more classifiers that<br/>
+correctly classify a specific example, the less energy is rewarded to each, encouraging<br/>
+them to correctly predict the more difficult examples. The predictive accuracy of each<br/>
+ensemble determines the total amount of energy to be replenished at each generation.<br/>
+Finally, we select the ensemble with the highest accuracy as our final model.</p>
+<h1>Meta-Evolutionary Ensembles</h1>
+<p>Pseudocode for the Meta-Evolutionary Ensembles (MEE) algorithm is shown in<br/>
+Figure 10, and a graphical depiction of the energy allocation scheme is shown in Figure<br/>
+11.</P>
+<p>Each agent (candidate solution) in the population is first initialized with randomly<br/>
+selected features, a random ensemble assignment, and an initial reservoir of energy. The<br/>
+representation of an agent consists of D + log<sub>2</sub><br/>
+(G) bits. D bits correspond to the selected<br/>
+features (1 if a feature is selected, 0 otherwise). The remaining bits are a binary<br/>
+representation of the ensemble index, where G is the maximum number of ensembles.<br/>
+Mutation and crossover operators are used to explore the search space and are defined<br/>
+in the same way as in previous section.</p>
+<p>In each iteration of the algorithm, an agent explores a candidate solution (classifier)<br/>
+similar to itself, obtained via crossover and mutation. The agent’s bit string is parsed to get<br/>
+a feature subset <i>J</i>. An ANN is then trained on the projection of the data set onto J, and returns<br/>
+</P>
+
+
+</html>
